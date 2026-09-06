@@ -1,0 +1,365 @@
+:root {
+  color-scheme: dark;
+  --bg: #060810;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #00d4ff;
+  --border: #1e2a3a;
+  font-family: Inter, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  line-height: 1.7;
+}
+a {
+  color: var(--accent);
+  text-underline-offset: 4px;
+}
+button,
+input,
+textarea {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 9px 16px;
+}
+button:hover {
+  border-color: var(--accent);
+}
+button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+.ql-editor:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+[hidden] {
+  display: none !important;
+}
+.skip {
+  position: absolute;
+  top: -100px;
+}
+.skip:focus {
+  top: 0;
+  background: var(--bg);
+  z-index: 10;
+  padding: 10px;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 48px;
+  border-bottom: 1px solid var(--border);
+  gap: 24px;
+}
+.logo {
+  font-family: Syne, sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--text);
+  text-decoration: none;
+}
+.logo span {
+  color: var(--accent);
+}
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.nav-links a {
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s;
+  letter-spacing: 0.02em;
+}
+.nav-links a:hover {
+  color: var(--text);
+}
+.nav-cta {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  border: 1px solid var(--accent);
+  padding: 8px 18px;
+  border-radius: 6px;
+  transition: all 0.2s;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+.nav-cta:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 72px 24px 100px;
+}
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+h1 {
+  font-family: Syne, sans-serif;
+  font-size: clamp(36px, 6vw, 58px);
+  margin: 16px 0 24px;
+  overflow-wrap: anywhere;
+}
+h2 {
+  font-size: 28px;
+  margin: 0 0 20px;
+}
+h3 {
+  font-size: 22px;
+}
+.intro {
+  font-size: 20px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+.eyebrow {
+  color: var(--accent);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.muted,
+.hint {
+  color: var(--muted);
+}
+.hint {
+  font-size: 13px;
+}
+.post-entry {
+  padding: 36px 0;
+  border-bottom: 1px solid var(--border);
+}
+.post-entry h2 {
+  margin: 8px 0 12px;
+}
+.post-entry h2 a {
+  color: var(--text);
+  text-decoration: none;
+}
+.post-entry h2 a:hover {
+  color: var(--accent);
+}
+.post-entry p {
+  color: var(--muted);
+  margin: 8px 0;
+}
+.post-entry time {
+  font-size: 13px;
+  color: var(--muted);
+}
+.cover {
+  display: block;
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  margin: 32px auto;
+  border-radius: 3px;
+}
+.prose {
+  font-size: 18px;
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+}
+.prose p,
+.prose ul,
+.prose ol,
+.prose blockquote {
+  margin: 1.4em 0;
+}
+.prose h2,
+.prose h3 {
+  margin-top: 2em;
+}
+.prose blockquote {
+  border-left: 2px solid var(--accent);
+  padding-left: 24px;
+  color: var(--muted);
+}
+.prose pre {
+  overflow: auto;
+  padding: 20px;
+  background: #0d1120;
+}
+.prose code {
+  font-size: 0.9em;
+}
+.prose img {
+  max-width: 100%;
+}
+section {
+  margin-top: 56px;
+}
+.responses {
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+.comment {
+  border-bottom: 1px solid var(--border);
+  padding: 24px 0;
+}
+.comment p {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.comment time {
+  font-size: 12px;
+  color: var(--muted);
+}
+label {
+  display: block;
+  font-weight: 500;
+  margin: 20px 0 8px;
+}
+input,
+textarea {
+  display: block;
+  width: 100%;
+  background: #0d1120;
+  color: var(--text);
+  border: 1px solid #334155;
+  border-radius: 4px;
+  padding: 12px;
+}
+textarea {
+  resize: vertical;
+}
+form button[type="submit"] {
+  margin-top: 20px;
+}
+footer {
+  padding: 24px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  border-top: 1px solid var(--border);
+}
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 24px 0;
+}
+.admin-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px;
+  border-bottom: 1px solid var(--border);
+}
+#post-form {
+  border-top: 1px solid var(--border);
+  margin-top: 36px;
+  padding-top: 36px;
+}
+.admin-post {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.admin-post span {
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+#editor {
+  min-height: 300px;
+  font:
+    16px/1.7 Inter,
+    sans-serif;
+}
+.ql-toolbar.ql-snow,
+.ql-container.ql-snow {
+  border-color: #334155;
+}
+.ql-snow .ql-stroke {
+  stroke: #cbd5e1;
+}
+.ql-snow .ql-fill {
+  fill: #cbd5e1;
+}
+.ql-snow .ql-picker {
+  color: #cbd5e1;
+}
+.ql-snow .ql-picker-options,
+.ql-snow .ql-tooltip {
+  background: #0d1120;
+  color: var(--text);
+}
+.ql-editor {
+  min-height: 300px;
+}
+.ql-snow .ql-editor pre.ql-syntax {
+  background: #0d1120;
+}
+.ql-toolbar button:focus-visible {
+  outline: 2px solid var(--accent);
+}
+@media (max-width: 900px) {
+  nav {
+    padding: 16px 24px;
+    flex-wrap: wrap;
+  }
+  .nav-links {
+    order: 3;
+    width: 100%;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  main {
+    padding-top: 48px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+.delete-post-action {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+button.destructive {
+  color: #fca5a5;
+  border-color: #7f1d1d;
+}
+button.destructive:hover {
+  border-color: #fca5a5;
+}

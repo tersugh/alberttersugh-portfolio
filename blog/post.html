@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Post — Albert Iorbee Tersugh</title>
+    <meta
+      name="description"
+      content="Notes on software, building products, and lessons along the way by Albert Iorbee Tersugh."
+    />
+    <meta property="og:title" content="Post — Albert Iorbee Tersugh" />
+    <meta
+      property="og:description"
+      content="Notes on software and building products."
+    />
+    <meta property="og:type" content="article" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/blog/blog.css" />
+    <script src="/assets/blog/config.js" defer></script>
+    <script type="module" src="/assets/blog/public.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header>
+      <nav aria-label="Main navigation">
+        <a class="logo" href="/">Albert<span>.</span></a>
+        <ul class="nav-links">
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#projects">Projects</a></li>
+          <li><a href="/#skills">Skills</a></li>
+          <li><a href="/#experience">Experience</a></li>
+          <li><a href="/#contact">Contact</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+        <a class="nav-cta" href="mailto:iorbeealbert@gmail.com">Hire me</a>
+      </nav>
+    </header>
+    <main id="main">
+      <a href="/blog">← All posts</a>
+      <p id="message" role="status">Loading post…</p>
+      <article id="post" hidden>
+        <header>
+          <p id="post-date" class="eyebrow"></p>
+          <h1 id="post-title"></h1>
+          <p id="post-excerpt" class="intro"></p>
+          <p id="post-tags" class="muted"></p>
+        </header>
+        <img id="cover" class="cover" alt="" hidden />
+        <div id="post-content" class="prose"></div>
+        <section class="responses" aria-label="Post likes">
+          <button id="like" type="button">Like this post</button
+          ><span id="like-count" role="status"></span>
+          <p id="like-message" role="status"></p>
+        </section>
+        <section aria-labelledby="comments-heading">
+          <h2 id="comments-heading">Discussion</h2>
+          <p id="comments-message" role="status">Loading comments…</p>
+          <div id="comments"></div>
+          <button id="more-comments" hidden>Show more comments</button>
+          <h3>Leave a comment</h3>
+          <p class="muted">
+            Your email stays private. Comments appear after approval.
+          </p>
+          <form id="comment-form" method="post">
+            <label for="name">Name</label
+            ><input
+              id="name"
+              name="name"
+              autocomplete="name"
+              required
+              minlength="2"
+              maxlength="80"
+            /><label for="email">Email (never shown publicly)</label
+            ><input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              maxlength="254"
+            /><label for="comment">Comment</label
+            ><textarea
+              id="comment"
+              name="comment"
+              required
+              minlength="3"
+              maxlength="3000"
+              rows="5"
+            ></textarea
+            ><button type="submit">Submit for approval</button>
+            <p id="comment-message" role="status"></p>
+          </form>
+        </section>
+      </article>
+      <noscript
+        >This page needs JavaScript to load blog content. Please enable it and
+        reload.</noscript
+      >
+    </main>
+    <footer>Albert Iorbee Tersugh · Developer &amp; Builder</footer>
+  </body>
+</html>

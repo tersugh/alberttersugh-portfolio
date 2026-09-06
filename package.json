@@ -1,0 +1,19 @@
+{
+  "name": "albert-portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test",
+    "preview": "node scripts/preview.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.57.0",
+    "dompurify": "^3.2.6",
+    "quill": "^2.0.3"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.9",
+    "jsdom": "^26.1.0"
+  }
+}
