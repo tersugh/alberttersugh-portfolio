@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Blog admin — Albert Iorbee Tersugh</title>
+    <meta
+      name="description"
+      content="Notes on software, building products, and lessons along the way by Albert Iorbee Tersugh."
+    />
+    <meta property="og:title" content="Blog admin — Albert Iorbee Tersugh" />
+    <meta
+      property="og:description"
+      content="Notes on software and building products."
+    />
+    <meta property="og:type" content="article" />
+    <meta name="robots" content="noindex,nofollow" />
+    <link rel="stylesheet" href="/assets/blog/editor.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/blog/blog.css" />
+    <script src="/assets/blog/config.js" defer></script>
+    <script type="module" src="/assets/blog/admin.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="admin-heading">
+      <a href="/blog">← Public blog</a><span>Publishing desk</span>
+    </header>
+    <main id="main">
+      <h1>Publishing desk</h1>
+      <p id="message" role="status">Checking session…</p>
+      <form id="login" hidden>
+        <label for="login-email">Email</label
+        ><input
+          id="login-email"
+          type="email"
+          autocomplete="username"
+          required
+        /><label for="password">Password</label
+        ><input
+          id="password"
+          type="password"
+          autocomplete="current-password"
+          required
+        /><button type="submit">Sign in</button>
+      </form>
+      <form id="recovery" hidden>
+  <h2>Set a new password</h2>
+
+  <label for="new-password">New password</label>
+  <input
+    id="new-password"
+    type="password"
+    autocomplete="new-password"
+    minlength="8"
+    required
+  />
+
+  <label for="confirm-password">Confirm new password</label>
+  <input
+    id="confirm-password"
+    type="password"
+    autocomplete="new-password"
+    minlength="8"
+    required
+  />
+
+  <button type="submit">Update password</button>
+
+  <p id="recovery-message" role="status"></p>
+</form>
+      <div id="desk" hidden>
+        <div class="actions">
+          <button id="new" type="button">New post</button
+          ><button id="logout" type="button">Sign out</button>
+        </div>
+        <h2>Posts</h2>
+        <div id="post-list"></div>
+        <button id="more-posts" hidden>Load more posts</button>
+        <form id="post-form">
+          <h2 id="editor-heading">New post</h2>
+          <label for="title">Title</label
+          ><input id="title" required maxlength="160" /><label for="slug"
+            >Slug</label
+          ><input
+            id="slug"
+            required
+            maxlength="120"
+            pattern="[a-z0-9]+(-[a-z0-9]+)*"
+            aria-describedby="slug-help"
+          />
+          <p id="slug-help" class="hint">
+            Lowercase letters, numbers and hyphens. Changing a published slug
+            breaks its old URL.
+          </p>
+          <label for="excerpt">Excerpt</label
+          ><textarea id="excerpt" required maxlength="400" rows="3"></textarea
+          ><label for="tags">Tags (comma separated, up to 10)</label
+          ><input id="tags" maxlength="320" /><label id="content-label"
+            >Content</label
+          >
+          <div id="editor"></div>
+          <label for="cover-file"
+            >Cover image (JPEG, PNG or WebP; up to 5 MB)</label
+          ><input
+            id="cover-file"
+            type="file"
+            accept="image/jpeg,image/png,image/webp"
+          /><img
+            id="cover-preview"
+            class="cover"
+            alt="Cover preview"
+            hidden
+          /><button id="remove-cover" type="button" hidden>
+            Remove cover on save
+          </button>
+          <p class="hint">
+            Image changes apply when you save. Removed/replaced files are
+            deleted after the post is saved.
+          </p>
+          <div class="actions">
+            <button type="submit" value="draft">Save draft / unpublish</button
+            ><button type="submit" value="published">
+              Publish / save published
+            </button>
+          </div>
+          <div id="delete-post-action" class="delete-post-action" hidden>
+            <button id="delete-post" type="button" class="destructive">
+              Delete post
+            </button>
+            <p class="hint">Permanently removes this post, its comments, and its likes.</p>
+          </div>
+          <p id="save-message" role="status"></p>
+        </form>
+        <section>
+          <h2>Pending comments</h2>
+          <button id="refresh-comments" type="button">Refresh comments</button>
+          <p id="moderation-message" role="status"></p>
+          <div id="pending"></div>
+          <button id="more-pending" hidden>Load more pending comments</button>
+        </section>
+      </div>
+      <noscript
+        >This page needs JavaScript to load blog content. Please enable it and
+        reload.</noscript
+      >
+    </main>
+    <footer>Albert Iorbee Tersugh · Developer &amp; Builder</footer>
+  </body>
+</html>
